@@ -1,0 +1,31 @@
+# Mode
+run_mode: "DV" # "DV" - real car or "FSDS" - simulation
+verbose: false                     # if we should publish a bunch of data, for debugging purposes
+sampling_time: 0.033
+
+# Longitudinal controller specific parameters
+target_speed: 10                   # m/s (not used parameter, now takes target speed from speed profiler)
+throttle_gain: 0.2                 # throttle gain for P controller
+integral_gain: 0.01                # integral gain for I controller
+
+# Cross track error parameters
+cross_track_gain: 2.2
+cross_track_softening: 0.5         # ensuring non-zero denominator in CTE 
+
+# Heading error parameters
+heading_error_gain: 1.0
+max_heading_error_change: 1.4      # 1.4 degrees, i.e approx pi/128 rads
+lookahead_distance: 4.2            # unit: meter
+
+
+# Steering smoothing parameters
+smoothing_factor: 0.6
+max_steering_change: 4.5
+
+
+# DeV17 physical max/min:  plus/minus 60 degrees
+max_steering_angle: 1.04719755     # 60 degrees in radians 
+# max_steering_angle: 0.785398 # 45 degrees in radians
+min_steering_angle: -1.04719755    # -60 degrees in radians
+# min_steering_angle: -0.785398    # -45 degrees in radians
+

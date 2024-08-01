@@ -1,0 +1,10 @@
+<launch>
+  <!-- Load the parameters from the YAML file -->
+  <rosparam file="$(find stanley_controller_pkg)/config/parameters.yaml" command='load' ns='stanley_controller'/> <!-- TODO: This should match the name of the package -->
+
+  <!-- TODO: Add your nodes below. Make sure to specify the correct values for the 'name', 'pkg', and 'type' attributes. -->
+
+  <node name="stanley_controller" pkg="stanley_controller_pkg" type="main.py" output="screen"/>
+  <!-- Assuming you also have a time_subscriber node, here's its launch command -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" output="screen"/> -->
+</launch>

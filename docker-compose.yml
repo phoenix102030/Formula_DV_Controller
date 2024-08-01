@@ -1,0 +1,24 @@
+version: '3.8'
+
+### -----------ROS MASTER----------------- ###
+# Do not edit! Works with melodic and noetic
+services:
+  stanley_controller_pkg:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    #runtime: nvidia 
+    environment:
+      - PACKAGE_NAME=stanley_controller_pkg
+    volumes:
+      - ./:/ws/src/dv-template-package
+      - ./fs_msgs:/ws/src/fs_msgs
+    network_mode: host
+    entrypoint: /ws/src/dv-template-package/docker-entrypoint.sh 
+    command: bash -c "source devel/setup.bash && roslaunch --wait --log stanley_controller_pkg stanley.launch" 
+
+networks:
+  ros_network:
+    driver: bridge
+  x11:
