@@ -41,7 +41,6 @@ Example of generic package for usage with DV pipeline.
 - [Validation and Testing](#validation-and-testing)
 - [Troubleshooting](#troubleshooting)
 - [Resources](#resources)
-- [Codebase Diagram](#codebase-diagram)
 
 ## Guidelines
 
@@ -262,6 +261,3 @@ Frequently observed challenges include:
 
     - [Understanding Github Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 
-## Codebase Diagram
-
-![Visualization of the codebase](./codebase-diagram.svg)
